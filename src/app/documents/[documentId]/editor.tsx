@@ -14,12 +14,17 @@ import ImageResize from 'tiptap-extension-resize-image'
 import FontFamily from '@tiptap/extension-font-family'
 import TextStyle from '@tiptap/extension-text-style'
 import Highlight from '@tiptap/extension-highlight'
+import Link from '@tiptap/extension-link'
 import { Color } from '@tiptap/extension-color'
+import TextAlign from '@tiptap/extension-text-align'
 import { useEditorStore } from '@/store/use-editor-store'
+import { Ruler } from './ruler'
+
 
 export function Editor() {
   const { setEditor } = useEditorStore();
   const editor = useEditor({
+    immediatelyRender: false,
     onCreate({editor}) {
       setEditor(editor);
     },
@@ -56,11 +61,18 @@ export function Editor() {
       FontFamily,
       TextStyle,
       Color,
+      Link.configure({
+        openOnClick: false,
+        defaultProtocol: 'https',
+      }),
       Highlight.configure({
         multicolor: true
       }),
       Table.configure({
         resizable: true,
+      }),
+      TextAlign.configure({
+        types: ['heading', 'paragraph'],
       }),
       TableRow,
       TableHeader,
@@ -72,25 +84,10 @@ export function Editor() {
       Image,
       ImageResize,
     ],
-    content: `
-      <table>
-        <tbody>
-          <tr>
-            <th>Name</th>
-            <th colspan="3">Description</th>
-          </tr>
-          <tr>
-            <td>Cyndi Lauper</td>
-            <td>Singer</td>
-            <td>Songwriter</td>
-            <td>Actress</td>
-          </tr>
-        </tbody>
-      </table>
-    `,
   })
   return (
     <div className="size-full overflow-auto bg-[#FAFBFD] px-4 print:p-0 print:bg-white print:overflow-visible">
+      <Ruler/>
       <div className="min-w-max flex justify-center w-[816px] py-4 print:py-0 mx-auto print:w-full print:min-w-0">
         <EditorContent editor={editor}/>
       </div>
