@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+SyncDocs
 
-## Getting Started
+SyncDocs is a powerful, real-time collaborative document editing application inspired by Google Docs. With cutting-edge technology and a sleek, modern design, SyncDocs allows users to create, edit, and collaborate seamlessly.
 
-First, run the development server:
+🌟 Features
 
-```bash
+🔒 Authentication: Secure and user-friendly authentication powered by Clerk.
+
+🌐 Real-Time Collaboration: Collaborate in real-time using Liveblocks for a smooth user experience.
+
+🗄️ Backend: Scalable and efficient backend powered by Convex.
+
+🎨 Modern Frontend: Built with Next.js 15 and styled using Tailwind CSS for a responsive and intuitive interface.
+
+📄 Document Management: Create, edit, and save documents effortlessly.
+
+🚀 Tech Stack
+
+Frontend:
+
+Next.js 15
+
+Tailwind CSS
+
+Backend:
+
+Convex
+
+Authentication:
+
+Clerk
+
+Real-Time Collaboration:
+
+Liveblocks
+
+🛠️ Installation
+
+Follow these steps to run SyncDocs locally:
+
+Clone the repository:
+
+git clone https://github.com/your-username/syncdocs.git
+cd syncdocs
+
+Install dependencies:
+
+npm install --legacy-peer-deps
+
+Set up environment variables:
+Create a .env.local file in the root directory and add the following:
+
+# Deployment used by `npx convex dev`
+
+CONVEX_DEPLOYMENT=
+NEXT_PUBLIC_CONVEX_URL=
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+LIVEBLOCK_SECRET_KEY=
+Run the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser to see the application in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+app/ - Main application folder for Next.js 15 with the following structure:
 
-## Learn More
+(home)/ - Contains components for the home page such as documents-table.tsx, navbar.tsx, page.tsx, search-input.tsx, and templates-gallery.tsx.
 
-To learn more about Next.js, take a look at the following resources:
+api/ - Contains backend-related files powered by Convex.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+documents/ - Contains the [documentId]/ folder with all the components of the editor, including:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+actions.ts
 
-## Deploy on Vercel
+avatars.tsx
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+document-input.tsx
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+document.tsx
+
+editor.tsx
+
+inbox.tsx
+
+loading.tsx
+
+navbar.tsx
+
+page.tsx
+
+room.tsx
+
+ruler.tsx
+
+threads.tsx
+
+toolbar.tsx
+
+fonts/ - Manages custom fonts for the application.
+
+error.tsx - Error page.
+
+favicon.ico - App favicon.
+
+globals.css - Global styles.
+
+layout.tsx - Application layout.
+
+components/ - Reusable React components, including:
+
+ui/ - UI components like fullscreen-loader.tsx, remove-dialog.tsx, and rename-dialog.tsx.
+
+convex-client-provider.tsx - Provides Convex client integration.
+
+constants/ - Holds application constants.
+
+extensions/ - Additional functionalities or extensions.
+
+hooks/ - Custom React hooks.
+
+lib/ - Utility libraries.
+
+store/ - State management logic.
+
+
+🌐 Live Demo
+
+Check out the live version here: https://syncdocs.vercel.app
+
+
