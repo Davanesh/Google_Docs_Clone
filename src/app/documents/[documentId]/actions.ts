@@ -19,10 +19,12 @@ export async function getUsers() {
     organizationId: [sessionClaims?.org_id as string],
   });
 
+
   const users = response.data.map((user) => ({
     id: user.id,
     name: user.fullName ?? user.primaryEmailAddress?.emailAddress ?? "Anonymous",
     avatar: user.imageUrl,
+    color: ""
   }));
 
   return users;

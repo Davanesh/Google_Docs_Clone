@@ -1,4 +1,4 @@
-import { Loader2, LoaderIcon } from "lucide-react";
+import { LoaderIcon } from "lucide-react";
 
 interface FullscreenLoaderProps {
     label?: string;
