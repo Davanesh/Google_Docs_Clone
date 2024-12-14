@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
 } from "@/components/ui/dropdown-menu";
 import { RemoveDialog } from "@/components/remove-dialog";
-import { RenameDialog } from "@/components/rename-dialog copy";
+import { RenameDialog } from "@/components/rename-dialog";
 
 interface DocumentMenuProps {
   documentId: Id<"documents">;
